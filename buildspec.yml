@@ -8,7 +8,7 @@ phases:
     commands:
       - composer install
       - cp .env.example .env.testing
-      - php artisan key:generate
+      - php artisan key:generate --env=testing
   build:
     commands:
       - vendor/bin/phpunit
