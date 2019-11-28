@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.3
+  pre_build:
+    commands:
+      - composer install
+      - cp .env.example .env.testing
+      - php artisan key:generate
+  build:
+    commands:
+      - vendor/bin/phpunit
+  post_build:
+    commands:
+      - echo Build completed on `date`
