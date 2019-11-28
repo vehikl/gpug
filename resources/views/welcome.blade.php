@@ -82,6 +82,9 @@
     <div class="content">
         <div class="title m-b-md">
             GPUG PHP User Group
+            <div>
+                It has been {{ config('accident.days_since_last') }} days since our last accident.
+            </div>
         </div>
 
         <div class="links">
