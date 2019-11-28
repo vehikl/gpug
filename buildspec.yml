@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  secrets-manager:
+    VAPOR_API_TOKEN: gpug/staging:VAPOR_API_TOKEN
+
 phases:
   install:
     runtime-versions:
@@ -14,4 +18,4 @@ phases:
       - vendor/bin/phpunit
   post_build:
     commands:
-      - echo Build completed on `date`
+      - vendor/bin/vapor deploy staging
