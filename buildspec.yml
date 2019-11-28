@@ -8,6 +8,11 @@ phases:
   install:
     runtime-versions:
       php: 7.3
+    commands:
+      - apt-get update
+      - apt-get install -y libzip-dev
+      - pecl install zip
+      - echo 'extension=zip.so' > /usr/local/etc/php/conf.d/zip.ini
   pre_build:
     commands:
       - composer install
